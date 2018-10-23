@@ -34,18 +34,8 @@
         "ports": [
           {
             "name": "web",
-            "port": 8080,
-            "targetPort": 8080
-          },
-          {
-            "name": "web2",
             "port": 5050,
             "targetPort": 5050
-          },
-          {
-            "name": "nncp",
-            "port": 4040,
-            "targetPort": 4040
           }
         ],
         "selector": {
@@ -184,13 +174,7 @@
                 "image": " ",
                 "ports": [
                   {
-                    "containerPort": 8080
-                  },
-                  {
                     "containerPort": 5050
-                  },
-                  {
-                    "containerPort": 4040
                   }
                 ],
                 "readinessProbe": {
@@ -198,7 +182,7 @@
                   "initialDelaySeconds": 3,
                   "httpGet": {
                     "path": "/",
-                    "port": 8080
+                    "port": 5050
                   }
                 },
                 "livenessProbe": {
@@ -206,7 +190,7 @@
                     "initialDelaySeconds": 30,
                     "httpGet": {
                         "path": "/",
-                        "port": 8080
+                        "port": 5050
                     }
                 },
                 "resources": {
