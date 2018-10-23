@@ -36,6 +36,16 @@
             "name": "web",
             "port": 8080,
             "targetPort": 8080
+          },
+          {
+            "name": "web2",
+            "port": 5050,
+            "targetPort": 5050
+          },
+          {
+            "name": "nncp",
+            "port": 4040,
+            "targetPort": 4040
           }
         ],
         "selector": {
@@ -175,6 +185,12 @@
                 "ports": [
                   {
                     "containerPort": 8080
+                  },
+                  {
+                    "containerPort": 5050
+                  },
+                  {
+                    "containerPort": 4040
                   }
                 ],
                 "readinessProbe": {
